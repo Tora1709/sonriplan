@@ -1,0 +1,22 @@
+{
+  "name": "sonriplan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-nodemon": "^2.2.1",
+    "md-date-picker": "^0.1.0",
+    "mongoose": "^4.12.3",
+    "nib": "^1.1.2",
+    "nodemailer": "^4.3.1",
+    "xoauth2": "^1.2.0"
+  }
+}

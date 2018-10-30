@@ -1,0 +1,12 @@
+select{
+  width: 100%;
+
+}
+input, select{
+  background: #E8E8E8;
+  border: none;
+  padding: 3px;
+}
+.space{
+
+}
