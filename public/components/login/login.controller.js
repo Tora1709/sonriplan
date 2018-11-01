@@ -3,10 +3,10 @@
     angular
         .module('Sonriplan')
         .controller('userController', userController);
-        userController.$inject = ['$http','$scope','userService']; 
+        userController.$inject = ['$http','$scope','userService'];
 
     function userController($http,$scope,userService) {
-      
+
 
       var vm = this;
       loadUsers();
@@ -18,12 +18,9 @@
       vm.login = function(credentials){
         var usersList = vm.users;
         var rol = 0;
-        var login = -1;
+        var login = 0;
         login = AuthService.first(credentials, usersList)
-        if (login == 0) {
-          $location.path('/Home');
-          console.log(login);
-        }else {
+        if (rol == 0) {
           rol = AuthService.role(credentials, usersList);
           switch (rol) {
             case 1:
@@ -36,7 +33,7 @@
               $location.path('/Home');
               break;
             case 4:
-              $location.path('/Home'); 
+              $location.path('/Home');
               break;
             default:
               break;
@@ -51,6 +48,6 @@
           vm.users = response.data;
         })
       }
-    } 
+    }
 
 })();
