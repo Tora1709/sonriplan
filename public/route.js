@@ -36,13 +36,13 @@
 
 		.state('usuarios',{
 			url: '/Usuarios',
-			templateUrl: './components/calendar/listadoUsuarios.html',
+			templateUrl: './components/listas/listadoUsuarios.html',
 			css: './css/calendar.css'
 		})
 
 		.state('sucursales',{
 			url: '/Sucursales',
-			templateUrl: './components/listas/ListaSurcursales.html',
+			templateUrl: './components/listas/ListaSucursales.html',
 			css: './css/calendar.css'
 		})
 
@@ -60,4 +60,3 @@
 		$urlRouterProvider.otherwise('/Login');
   };
 })();
-
