@@ -224,22 +224,23 @@ section{
                   <div class=" col-xs-12  col-md-6">
 
                     <label for="store-name">Nombre sucursal</label>
-                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursal.name" name="name" required="required" />
+                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursales.name" name="name" required/>
 
                   </div>
                   <div class="col-xs-12 col-md-6">
 
                     <label for="store-name">Ubicación</label>
-                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursal.locate" name="locate" required="required" />
+                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursales.locate" name="locate" required/>
 
                   </div>
 
+                  <button type="submit" ng-click="vm.reset()" class="btn btn-default" ng-disabled="frmSucursal.$invalid" data-dismiss="modal">Guardar</button>
                 </div>
                 <br>
 
                 <br>
 
-                  <button type="submit" ng-click="vm.reset()" class="btn btn-default" ng-disabled="frmSucursal.$invalid" data-dismiss="modal">Guardar</button>
+
               </form>
             </div>
             <div class="modal-footer">

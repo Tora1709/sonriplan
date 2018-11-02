@@ -1,5 +1,4 @@
 var Sucursal = require('./sucursal.model.js');
-var nodemailer = require('nodemailer');
 
 module.exports.save = function(req, res) {
 

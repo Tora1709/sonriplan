@@ -22,7 +22,7 @@
 
     vm.save = function(pNewSucursal) {
       sucursalService.setSucursal(pNewSucursal);
-      console.log(pReserve);
+      console.log(pNewSucursal);
       clean();
     }
 
