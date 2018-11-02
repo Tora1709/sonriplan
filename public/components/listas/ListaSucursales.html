@@ -181,23 +181,22 @@ section{
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr>
+        <tr ng-repeat="sucursal in vm.sucursales">
+          <td>{{$index+1}}</td>
+          <td>{{sucursal.name}}</td>
+          <td>{{sucursal.locate}}</td>
+          <td><a class="btn btn-primary" href="">Modificar</a></td>
+          <td><a class="btn btn-danger" href="">Eliminar</a></td>
+
+        </tr>
+        <!-- <tr>
           <td>001</td>
           <td>SONRIPLAN </td>
           <td>CARTAGO</td>
-          <td><a class="btn btn-primary" href="">Modificar</a></td>
-          <td><a class="btn btn-danger" href="">Eliminar</a></td>
+          <td><input class="btn btn-primary" type="button" value="Modificar" ng-click="vm.getInfo(sucursal)"></td>
+          <td><input class="btn btn-danger" type="button" value="Eliminar"></td>
 
-        </tr>
-        <tr>
-          <td>002</td>
-          <td>SONRIPLAN</td>
-          <td>HEREDIA</td>
-          <td><a class="btn btn-primary" href="">Modificar</a></td>
-          <td><a class="btn btn-danger" href="">Eliminar</a></td>
-
-        </tr>
-        <tr>
+        </tr> -->
 
       </tbody>
     </table>
@@ -218,7 +217,7 @@ section{
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form name="frmSucursal" ng-submit="vm.save(vm.sucursal)" novalidate autocomplete="off">
+              <form name="frmSucursal" ng-submit="vm.save(vm.sucursales)" novalidate autocomplete="off">
                 <div class="row">
 
 

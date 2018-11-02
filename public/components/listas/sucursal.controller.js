@@ -18,15 +18,11 @@
       })
     }
 
-    function init() {
-      vm.sucursal = {};
-    }init();
 
 
     vm.save = function(pNewSucursal) {
       sucursalService.setSucursal(pNewSucursal);
       console.log(pReserve);
-      init();
       clean();
     }
 
