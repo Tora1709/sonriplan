@@ -62,7 +62,14 @@
 		.state('pacientes',{
 			url: '/Pacientes',
 			templateUrl: './components/listas/ListaPacientes.html',
-			css: './css/calendar.css'
+			css: './css/calendar.css',
+			resolve:{
+				load: ['$ocLazyLoad', function($ocLazyLoad) {
+						return $ocLazyLoad.load('./components/listas/paciente.controller.js')
+				}]
+			},
+			controller: 'pacienteController',
+			controllerAs: 'vm'
 		})
 		$urlRouterProvider.otherwise('/Login');
   };

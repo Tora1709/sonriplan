@@ -213,20 +213,20 @@ section{
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form>
+              <form name="frmPaciente" ng-submit="vm.save(vm.paciente)" novalidate autocomplete="off">
                 <div class="row">
 
 
                   <div class="col-xs-12  col-md-6">
 
                     <label for="store-name">Nombre completo</label>
-                    <input type="text" class="form-control mb-1" required="required" />
+                    <input ng-model="vm.paciente.name" name="name" type="text" class="form-control mb-1" required="required" />
 
                   </div>
                   <div class="col-xs-12 col-md-6">
 
                     <label for="store-name">Correo</label>
-                    <input type="email" class="form-control mb-1" required="required" />
+                    <input ng-model="vm.paciente.email" name="email" type="email" class="form-control mb-1" required="required" />
 
                   </div>
 
@@ -235,29 +235,30 @@ section{
                 <div class="row">
                   <div class="col-xs-12  col-md-6">
                     <label>Cédula</label>
-                   <input type="email" class="form-control mb-1" required="required" />
+                   <input ng-model="vm.paciente.id" name="id" type="email" class="form-control mb-1" required="required" />
 
                   </div>
 
 
                   <div class=" col-xs-12  col-md-6">
                     <label>Teléfono</label>
-                    <input type="text" class="form-control mb-1" required="required" />
+                    <input ng-model="vm.paciente.phone" name="phone" type="text" class="form-control mb-1" required="required" />
                   </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-xs-12  col-md-6">
                     <label>Edad</label>
-                   <input type="email" class="form-control mb-1" required="required" />
+                   <input ng-model="vm.paciente.age" name="age" type="email" class="form-control mb-1" required="required" />
 
                   </div>
                 </div>
+                <button type="submit" ng-click="vm.reset()" class="btn btn-default" ng-disabled="frmPaciente.$invalid" ata-dismiss="modal">Guardar</button>
 
               </form>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Guardar</button>
+
           </div>
           </div>
 
