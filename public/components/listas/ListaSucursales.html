@@ -218,20 +218,20 @@ section{
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form>
+              <form name="frmSucursal" ng-submit="vm.save(vm.sucursal)" novalidate autocomplete="off">
                 <div class="row">
 
 
                   <div class=" col-xs-12  col-md-6">
 
                     <label for="store-name">Nombre sucursal</label>
-                    <input type="text" class="form-control mb-1" required="required" />
+                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursal.name" name="name" required="required" />
 
                   </div>
                   <div class="col-xs-12 col-md-6">
 
                     <label for="store-name">Ubicación</label>
-                    <input type="email" class="form-control mb-1" required="required" />
+                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursal.locate" name="locate" required="required" />
 
                   </div>
 
@@ -240,10 +240,11 @@ section{
 
                 <br>
 
+                  <button type="submit" ng-click="vm.reset()" class="btn btn-default" ng-disabled="frmSucursal.$invalid" data-dismiss="modal">Guardar</button>
               </form>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Guardar</button>
+
           </div>
           </div>
 

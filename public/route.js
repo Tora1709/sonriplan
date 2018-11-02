@@ -18,14 +18,14 @@
 		.state('login',{
 			url: '/Login',
 			templateUrl: './components/login/login-page.html',
-			css: './css/assets/css/material-kit.css',
-			resolve: {
-                    load: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load('./components/login/login.controller.js')
-                    }]
-                },
-                controller: 'userController',
-                controllerAs: 'vm'
+			css: './css/assets/css/material-kit.css'
+			//resolve: {
+        //            load: ['$ocLazyLoad', function($ocLazyLoad) {
+          //              return $ocLazyLoad.load('./components/login/login.controller.js')
+            //        }]
+              //  },
+                //controller: 'userController',
+                //controllerAs: 'vm'
 		})
 
 		.state('agenda',{
@@ -43,7 +43,14 @@
 		.state('sucursales',{
 			url: '/Sucursales',
 			templateUrl: './components/listas/ListaSucursales.html',
-			css: './css/calendar.css'
+			css: './css/calendar.css',
+				resolve:{
+					load: ['$ocLazyLoad', function($ocLazyLoad) {
+							return $ocLazyLoad.load('./components/listas/sucursal.controller.js')
+					}]
+				},
+				controller: 'sucursalController',
+				controllerAs: 'vm'
 		})
 
 		.state('doctores',{

@@ -41,12 +41,16 @@ app.use( function(req, res, next){
 // Se definen las rutas que van estar ligadas a toda la funcionalidad de la aplicacion
 var index = require('./index'),
 userRoutes = require('./components/users/user.route.js');
+sucursalRoutes = require('./components/sucursal/sucursal.route.js')
 
 
 // Se definen las rutas de los servicios con las que se conecta el front-end
 
-app.use('/', index),
+
 app.use('/api', userRoutes);
+app.use('/api', sucursalRoutes);
+
+app.use('/', index);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;
