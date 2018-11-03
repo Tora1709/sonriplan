@@ -41,9 +41,6 @@
         }
       }
 
-      function _updateTeacher(pSucursalModified) {
-        return $http.put('http://localhost:3000/api/update_sucursal',pSucursalModified);
-      }
 
 
     }

@@ -46,11 +46,12 @@
       }
       pacienteService.updatePaciente(pacienteEdited).then(function(response) {
         loadPacientes();
+        vm.id = null;
         vm.name = null;
         vm.email = null;
         vm.phone = null;
         vm.age = null;
-        vm.id = null;
+
       })
     }
 

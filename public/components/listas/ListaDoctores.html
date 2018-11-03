@@ -234,15 +234,15 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form>
+              <form name="frmDoctores" ng-submit="vm.save(vm.doctor)">
                 <div class="row">
                   <div class="col-xs-12  col-md-6">
                     <label for="">Nombre completo</label>
-                    <input type="text" class="form-control mb-1" name="store-name" required="required" />
+                    <input name="name" ng-model="vm.doctor.name" type="text" class="form-control mb-1" name="store-name" required="required" />
                   </div>
                   <div class="col-xs-12  col-md-6">
                     <label>Especialidad</label>
-                    <select class="form-control mb-1">
+                    <select name="special" ng-model="vm.doctor.special" class="form-control mb-1">
                       <option>-Selecione-</option>
                     </select>
                   </div>
@@ -251,11 +251,11 @@
                 <div class="row">
                   <div class=" col-xs-12 col-md-6">
                     <label for="store-name">Horario</label>
-                    <input type="text" class="form-control mb-1" name="store-name" required="required" />
+                    <input name="time" ng-model="vm.doctor.time" type="text" class="form-control mb-1" name="store-name" required="required" />
                   </div>
                   <div class=" col-xs-12  col-md-6">
                     <label>Ubicación</label>
-                    <input type="text" class="form-control mb-1" name="store-name" required="required" />
+                    <input name="locate" ng-model="vm.doctor.locate" type="text" class="form-control mb-1" name="store-name" required="required" />
                   </div>
                 </div>
                 <br>
@@ -263,7 +263,7 @@
                   <div class="col-xs-12  col-md-6">
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
+                        <input name="avalible" ng-model="vm.doctor.avalible" class="form-check-input" type="checkbox" value="">
                         Disponibilidad
                         <span class="form-check-sign">
             <span class="check"></span>
