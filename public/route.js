@@ -30,7 +30,7 @@
 
 		.state('agenda',{
 			url: '/Agenda',
-			templateUrl: './components/calendar/Agenda.html',
+			templateUrl: './components/calendar/agendav1.html',
 			css: './css/calendar.css'
 		})
 
