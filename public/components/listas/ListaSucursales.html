@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
 
  <!--  <link rel="stylesheet" type="text/css" href="css/form.css"> -->
@@ -203,24 +200,24 @@ section{
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form name="frmSucursal" ng-submit="vm.save(vm.sucursales)" novalidate autocomplete="off">
+              <form name="frmSucursal" ng-submit="vm.save(vm.sucursal)" novalidate autocomplete="off">
                 <div class="row">
 
 
                   <div class=" col-xs-12  col-md-6">
 
                     <label for="store-name">Nombre sucursal</label>
-                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursales.name" name="name" required/>
+                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursal.name" name="name" required/>
 
                   </div>
                   <div class="col-xs-12 col-md-6">
 
                     <label for="store-name">Ubicación</label>
-                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursales.locate" name="locate" required/>
+                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursal.locate" name="locate" required/>
 
                   </div>
 
-                  <button type="submit" ng-click="vm.save(vm.sucursales)" class="btn btn-default" ng-disabled="frmSucursal.$invalid" data-dismiss="modal">Guardar</button>
+                  <button type="submit" ng-click="vm.save(vm.sucursal)" class="btn btn-default" ng-disabled="frmSucursal.$invalid" data-dismiss="modal">Guardar</button>
                 </div>
                 <br>
 
@@ -235,5 +232,3 @@ section{
           </div>
 
 </div>
-
-</html>
