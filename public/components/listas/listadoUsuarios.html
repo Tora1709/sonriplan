@@ -172,16 +172,6 @@ section{
           <td><a class="btn btn-danger" href="">Eliminar</a></td>
 
         </tr>
-        <tr>
-          <td>Fernanda Martinez</td>
-          <td>fer@gmail.com</td>
-          <td>Activo</td>
-          <td><a class="btn btn-primary" href="">Modificar</a></td>
-          <td><a class="btn btn-danger" href="">Eliminar</a></td>
-
-        </tr>
-        <tr>
-
       </tbody>
     </table>
   </div>
@@ -211,7 +201,7 @@ section{
                   <div class=" col-xs-12 col-md-6">
 
                     <label for="store-name">Correo</label>
-                    <input type="email" class="form-control mb-1" required="required" />
+                    <input id="email" type="email" ng-model="vm.usuarios.email" class="form-control mb-1" required="required" />
 
                   </div>
 
@@ -222,9 +212,9 @@ section{
                     <label>Rol</label>
                    <select class="form-control mb-1">
                      <option>-Selecione un valor-</option>
-                     <option>Secretaria general</option>
-                     <option>Secretaria CR</option>
-                     <option>Admin</option>
+                     <option value="Secretaria general">Secretaria general</option>
+                     <option value="Secretaria CR" >Secretaria CR</option>
+                     <option value="Admin">Admin</option>
                    </select>
 
                   </div>

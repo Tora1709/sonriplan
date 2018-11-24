@@ -37,7 +37,14 @@
 		.state('usuarios',{
 			url: '/Usuarios',
 			templateUrl: './components/listas/listadoUsuarios.html',
-			css: './css/calendar.css'
+			css: './css/calendar.css',
+				resolve:{
+					load: ['$ocLazyLoad', function($ocLazyLoad) {
+							return $ocLazyLoad.load('./components/listas/usuario.controller.js')
+					}]
+				},
+				controller: 'usuarioController',
+				controllerAs: 'vm'
 		})
 
 		.state('sucursales',{
