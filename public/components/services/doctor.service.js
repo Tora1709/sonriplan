@@ -9,7 +9,7 @@
 
     function doctorService($http) {
 
-      var doctot = [];
+      var doctor = [];
 
       var publicAPI = {
         setDoctor: _setDoctor,
