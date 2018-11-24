@@ -13,7 +13,7 @@
 
       var publicAPI = {
         setUser: _setUser,
-        getusers: _getusers,
+        getUsers: _getUsers,
         updateUser: _updateUser
       };
       return publicAPI;
@@ -23,7 +23,7 @@
         return $http.post('http://localhost:3000/api/save_user',pUser);
       }
 
-      function _getusers() {
+      function _getUsers() {
         return $http.get('http://localhost:3000/api/get_all_user');
       }
 

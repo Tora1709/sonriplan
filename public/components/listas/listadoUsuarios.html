@@ -164,10 +164,10 @@ section{
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        <tr>
-          <td>Julian Pérez</td>
-          <td>jul@hotmail.es </td>
-          <td>Inactivo</td>
+        <tr ng-repeat="usuario in vm.usuarios">
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.rol}}/td>
           <td><a class="btn btn-primary" href="">Modificar</a></td>
           <td><a class="btn btn-danger" href="">Eliminar</a></td>
 
@@ -188,20 +188,20 @@ section{
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form name="frmUsuarios" ng-submit="vm.save(vm.Usuarios)" novalidate autocomplete="off">
+              <form name="frmUsuario" ng-submit="vm.save(vm.usuario)" novalidate autocomplete="off">
                 <div class="row">
 
 
                   <div class="col-xs-12  col-md-6">
 
                     <label for="store-name">Nombre completo</label>
-                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.usuarios.name" required="required" />
+                    <input id="name" name="name" type="text" class="form-control mb-1" ng-model="vm.usuario.name" required="required" />
 
                   </div>
                   <div class=" col-xs-12 col-md-6">
 
                     <label for="store-name">Correo</label>
-                    <input id="email" type="email" ng-model="vm.usuarios.email" class="form-control mb-1" required="required" />
+                    <input id="email" type="email" name="email" ng-model="vm.usuario.email" class="form-control mb-1" required="required" />
 
                   </div>
 
@@ -210,7 +210,7 @@ section{
                 <div class="row">
                   <div class="col-xs-12  col-md-6">
                     <label>Rol</label>
-                   <select class="form-control mb-1">
+                   <select name="rol" id="rol" type="text" ng-model="vm.usuario.rol" class="form-control mb-1">
                      <option>-Selecione un valor-</option>
                      <option value="Secretaria general">Secretaria general</option>
                      <option value="Secretaria CR">Secretaria CR</option>
@@ -222,7 +222,7 @@ section{
 
                   <div class=" col-xs-12  col-md-6">
                     <label>Ubicación</label>
-                    <input type="text" class="form-control mb-1" required="required" />
+                    <input name="locate" id="locate" type="text" ng-model="vm.usuario.locate" class="form-control mb-1" required="required" />
                   </div>
                 </div>
                 <br>
@@ -230,7 +230,7 @@ section{
               </form>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Guardar</button>
+            <button type="submit" ng-click="vm.save(usuario)" class="btn btn-default" data-dismiss="modal">Guardar</button>
           </div>
           </div>
 

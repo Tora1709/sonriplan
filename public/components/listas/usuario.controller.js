@@ -2,10 +2,10 @@
   'use strict'
   angular
   .module('Sonriplan')
-  .controller('usuarioController', usuarioController);
-  usuarioController.$inject = ['$http','$scope','usuariosService'];
+  .controller('usuarioController',usuarioController);
+  usuarioController.$inject = ['$http','$scope','userService'];
 
-  function pacienteController($http,$scope,usuariosService){
+  function usuarioController($http,$scope,userService){
 
     var vm = this;
     loadUsuarios();
@@ -13,7 +13,7 @@
     vm.usuarios = "";
 
     function loadUsuarios() {
-      usuariosService.getUsuarios().then(function(response) {
+      userService.getUsers().then(function(response) {
         vm.usuarios = response.data;
       })
     }
@@ -21,29 +21,28 @@
 
 
     vm.save = function(pNewUsuario) {
-      usuariosService.setUsuarios(pNewUsuario);
+      userService.setUser(pNewUsuario);
       clean();
     }
 
     vm.getInfo = function(pUsuario) {
-      wm.paciente._id = pPaciente._id;
-      wm.paciente.name = pUsuario.name;
-      wm.paciente.email = pUsuario.email;
-      wm.paciente.id = pUsuario.id;
-      wm.paciente.phone = pUsuario.phone;
-      wm.paciente.age = pUsuario.age;
+      wm.usuario._id = pUsuario._id;
+      wm.usuario.name = pUsuario.name;
+      wm.usuario.email = pUsuario.email;
+      wm.usuario.rol = pUsuario.rol;
+      wm.usuario.locate = pUsuario.locate;
     }
 
     vm.update = function() {
-      var usuarioEdited = {
+      var pUserModified = {
         _id: wm.usuario._id,
         id: wm.usuario.id,
         name: wm.usuario.name,
         email: wm.usuario.email,
-        phone: wm.usuario.phone,
-        age: wm.usuario.age
+        rol: wm.usuario.rol,
+        locate: wm.usuario.locate
       }
-      pacienteService.updatePaciente(pacienteEdited).then(function(response) {
+      userService.updateUser(pUserModified).then(function(response) {
         loadPacientes();
         vm.id = null;
         vm.name = null;
