@@ -19,16 +19,15 @@
       return publicAPI;
 
       function _setPaciente(pPaciente) {
-        console.log(Paciente);
-        return $http.post('http://localhost:3000/api/paciente',pPaciente);
+        return $http.post('http://localhost:3000/api/save_paciente',pPaciente);
       }
 
       function _getPacientes() {
-        return $http.get('http://localhost:3000/api/paciente');
+        return $http.get('http://localhost:3000/api/get_all_paciente');
       }
 
       function _updatePaciente(pPacienteModified) {
-        return $http.put('http://localhost:3000/api/paciente',pPacienteModified);
+        return $http.put('http://localhost:3000/api/update_paciente',pPacienteModified);
       }
 
 
@@ -41,9 +40,7 @@
         }
       }
 
-      function _updateTeacher(pPacienteModified) {
-        return $http.put('http://localhost:3000/api/update_paciente',pPacienteModified);
-      }
+
 
 
     }

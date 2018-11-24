@@ -14,7 +14,7 @@
 
     function loadPacientes() {
       pacienteService.getPacientes().then(function(response) {
-        vm.sucursales = response.data;
+        vm.pacientes = response.data;
       })
     }
 
@@ -22,21 +22,20 @@
 
     vm.save = function(pNewPaciente) {
       pacienteService.setPaciente(pNewPaciente);
-      console.log(pNewPaciente);
       clean();
     }
 
     vm.getInfo = function(pPaciente) {
       wm.paciente._id = pPaciente._id;
-      wm.paciente.id = pPaciente.id;
       wm.paciente.name = pPaciente.name;
       wm.paciente.email = pPaciente.email;
+      wm.paciente.id = pPaciente.id;    
       wm.paciente.phone = pPaciente.phone;
       wm.paciente.age = pPaciente.age;
     }
 
     vm.update = function() {
-      var sucursalEdited = {
+      var pacienteEdited = {
         _id: wm.paciente._id,
         id: wm.paciente.id,
         name: wm.paciente.name,
