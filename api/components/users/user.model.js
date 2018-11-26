@@ -1,10 +1,12 @@
 //Dependencias
 var mongoose = require('mongoose');
 //Creando esquemas
-var ReserveSchema = new mongoose.Schema({
-    email: { type: String, required: true },
-    pass : { type: String, required: true},
-    rol : { type: String}
+var UserSchema = new mongoose.Schema({
+    name: { type: String, required: false },
+    email: { type: String, required: false },
+    pass : { type: String, required: false},
+    rol : { type: String, required: false},
+    locate : { type: String, required: false}
 });
 
-module.exports = mongoose.model('User', ReserveSchema);
+module.exports = mongoose.model('user', UserSchema);

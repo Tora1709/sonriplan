@@ -1,10 +1,12 @@
-var user = require('./user.model.js');
+var User = require('./user.model.js');
 
 module.exports.save = function(req,res){
 	var newUser = new User({
+		name : req.body.name,
 		email : req.body.email,
 		pass : req.body.pass,
-		rol : req.body.rol
+		rol : req.body.rol,
+		locate : req.body.locate
 	});
 
 
@@ -13,7 +15,7 @@ module.exports.save = function(req,res){
 			res.json({success:false, msg:'No se envió la solicitud' + err});
 		}else{
 			res.json({success:false, msg:'Se envió la solicitud'});
-		}	
+		}
 
 	});
 

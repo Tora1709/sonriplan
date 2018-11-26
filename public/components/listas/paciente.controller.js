@@ -29,7 +29,7 @@
       wm.paciente._id = pPaciente._id;
       wm.paciente.name = pPaciente.name;
       wm.paciente.email = pPaciente.email;
-      wm.paciente.id = pPaciente.id;    
+      wm.paciente.id = pPaciente.id;
       wm.paciente.phone = pPaciente.phone;
       wm.paciente.age = pPaciente.age;
     }

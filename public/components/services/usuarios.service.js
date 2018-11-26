@@ -9,7 +9,7 @@
 
     function userService($http) {
 
-      var user = [];
+      var usuario = [];
 
       var publicAPI = {
         setUser: _setUser,
@@ -19,7 +19,6 @@
       return publicAPI;
 
       function _setUser(pUser) {
-        console.log(pUser);
         return $http.post('http://localhost:3000/api/save_user',pUser);
       }
 
