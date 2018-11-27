@@ -31,7 +31,14 @@
 		.state('agenda',{
 			url: '/Agenda',
 			templateUrl: './components/calendar/agendav1.html',
-			css: './css/calendar.css'
+			css: './css/calendar.css',
+				resolve:{
+					load: ['$ocLazyLoad', function($ocLazyLoad) {
+							return $ocLazyLoad.load('./components/calendar/agenda.controller.js')
+					}]
+				},
+				controller: 'agendaController',
+				controllerAs: 'vm'
 		})
 
 		.state('usuarios',{
