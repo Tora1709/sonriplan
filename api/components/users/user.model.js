@@ -2,11 +2,11 @@
 var mongoose = require('mongoose');
 //Creando esquemas
 var UserSchema = new mongoose.Schema({
-    name: { type: String, required: false },
-    email: { type: String, required: false },
-    pass : { type: String, required: false},
-    rol : { type: String, required: false},
-    locate : { type: String, required: false}
+    name: { type: String},
+    email: { type: String},
+    pass : { type: String},
+    rol : { type: String},
+    locate : { type: String}
 });
 
 module.exports = mongoose.model('user', UserSchema);

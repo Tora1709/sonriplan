@@ -3,11 +3,11 @@
   angular
 
     .module('Sonriplan')
-    .service('userService', userService);
-    userService.$inject=['$http'];
+    .service('usuarioService', usuarioService);
+    usuarioService.$inject=['$http'];
 
 
-    function userService($http) {
+    function usuarioService($http) {
 
       var usuario = [];
 

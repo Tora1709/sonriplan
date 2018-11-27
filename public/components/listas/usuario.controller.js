@@ -3,25 +3,24 @@
   angular
   .module('Sonriplan')
   .controller('usuarioController',usuarioController);
-  usuarioController.$inject = ['$http','$scope','userService'];
+  usuarioController.$inject = ['$http','$scope','usuarioService','$q'];
 
-  function usuarioController($http,$scope,userService){
+  function usuarioController($http,$scope,usuarioService,$q){
 
     var vm = this;
     loadUsuarios();
     vm.usuario = {};
     vm.usuarios = "";
 
-    function loadUsuarios() {
-      userService.getUsers().then(function(response) {
-        vm.usuarios = response.data;
-      })
-    }
-
+  function loadUsuarios(){
+    usuarioService.getUsers().then(function(response) {
+      vm.usuarios = response.data;
+    })
+  }
 
 
     vm.save = function(pNewUsuario) {
-      userService.setUser(pNewUsuario);
+      usuarioService.setUser(pNewUsuario);
       clean();
     }
 
@@ -42,19 +41,19 @@
         rol: wm.usuario.rol,
         locate: wm.usuario.locate
       }
-      userService.updateUser(pUserModified).then(function(response) {
-        loadPacientes();
+      usuarioService.updateUser(pUserModified).then(function(response) {
+        loadUsuarios();
         vm.id = null;
         vm.name = null;
         vm.email = null;
-        vm.phone = null;
-        vm.age = null;
+        vm.rol = null;
+        vm.locate = null;
 
       })
     }
 
     function clean() {
-      vm.paciente = {}
+      vm.usuario = {}
     }
   }
 })();

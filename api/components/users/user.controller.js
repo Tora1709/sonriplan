@@ -26,3 +26,15 @@ module.exports.save = function(req,res){
 			res.send(request);
 		})
 	}
+
+	module.exports.update = function(req, res) {
+	    console.log(req.body.id);
+	    User.findByIdAndUpdate(req.body._id, {
+	        $set: req.body
+	    }).then(function(data) {
+	        res.json({
+	            success: true,
+	            msg: 'Se ha actualizado correctamente.'
+	        });
+	    });
+	}
