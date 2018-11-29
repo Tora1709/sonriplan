@@ -186,7 +186,7 @@
             <label  class="tbl-header" >Especialidad</label>
              <select type="date" class="form-control mb-1 " id="">
               <option>--Seleccione un valor--</option>
-              <option>Ortodoncia General</option>
+              <option ng-repeat="doctor in vm.doctores" value="{{doctor.special}}">{{doctor.special}}</option>
               <option></option>
              </select>
           </div>
@@ -217,121 +217,14 @@
             </tr>
             </thead>
             <tbody>
-              <tr >
-                <td> 8:00am - 8:15am</td>
-                <td>Cita de Andres</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
+              <tr ng-repeat="agenda in vm.agendas">
+                <td>{{agenda.hora}}</td>
+                <td>{{agenda.paciente1}}</td>
+                <td>{{agenda.paciente2}}</td>
+                <td>{{agenda.paciente3}}</td>
+                <td>{{agenda.paciente4}}</td>
+                <td>{{agenda.paciente5}}</td>
               </tr>
-              <tr>
-                <td> 8:15am - 8:30am</td>
-                <td>Cita de Juan Pérez</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 8:30am - 8:45am</td>
-                <td>Cita de Maria</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 8:45am - 9:00am</td>
-                <td>Cita de Andrey</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 9:00am - 9:15am</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 9:15am - 9:30am</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 9:30am - 9:45am</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                <td> 9:45am - 10:00am</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-                <td>+</td>
-              </tr>
-              <tr>
-                    <td> 10:00am - 10:15am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-              <tr>
-                    <td> 10:15am - 10:30am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-              <tr>
-                    <td> 10:30am - 10:45am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-              <tr>
-                    <td> 11:00am - 11:15am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-              <tr>
-                    <td> 11:15am - 11:30am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-
-              <tr>
-                    <td> 11:30am - 11:45am</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-                    <td>+</td>
-              </tr>
-
-
             </tbody>
           </table>
 

@@ -25,8 +25,6 @@
         vm.pacientes = response.data;
       })
     }
-
-
     function clean() {
       vm.agenda = {}
     }
