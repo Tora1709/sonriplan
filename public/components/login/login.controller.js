@@ -2,52 +2,44 @@
     'use strict'
     angular
         .module('Sonriplan')
-        .controller('userController', userController);
-        userController.$inject = ['$http','$scope','userService'];
+        .controller('loginController', loginController);
+        loginController.$inject = ['$q','$location','AuthService','SessionService','usuarioService'];
 
-    function userController($http,$scope,userService) {
+    function loginController($q,$location,AuthService,SessionService,usuarioService) {
 
 
       var vm = this;
-      loadUsers();
+      loadUsuarios();
 
 
       /*SessionService.destroy();*/
 
       /*Valida que los datos sean correctos*/
       vm.login = function(credentials){
-        var usersList = vm.users;
-        var rol = 0;
+        var usersList = vm.usuarios;
+        var rol = '';
         var login = 0;
         login = AuthService.first(credentials, usersList)
-        if (rol == 0) {
-          rol = AuthService.role(credentials, usersList);
+        rol = AuthService.role(credentials, usersList);
           switch (rol) {
-            case 1:
+            case 'Admin':
               $location.path('/Home');
               break;
-            case 2:
+            case 'Secretaria general':
               $location.path('/Home');
               break;
-            case 3:
-              $location.path('/Home');
-              break;
-            case 4:
+            case 'Secretaria CR':
               $location.path('/Home');
               break;
             default:
               break;
           }
-        }
-
-
       }
 
-      function loadUsers(){
-        userService.getUser().then(function (response){
-          vm.users = response.data;
+      function loadUsuarios(){
+        usuarioService.getUsers().then(function(response) {
+          vm.usuarios = response.data;
         })
       }
-    }
-
+ }
 })();

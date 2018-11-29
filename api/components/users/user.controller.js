@@ -3,6 +3,7 @@ var User = require('./user.model.js');
 module.exports.save = function(req,res){
 	var newUser = new User({
 		name : req.body.name,
+		pass : req.body.pass,
 		email : req.body.email,
 		pass : req.body.pass,
 		rol : req.body.rol,

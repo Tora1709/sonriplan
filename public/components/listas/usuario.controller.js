@@ -18,15 +18,20 @@
     })
   }
 
+  function init(){
+    vm.usuario = {};
+  }init();
 
     vm.save = function(pNewUsuario) {
       usuarioService.setUser(pNewUsuario);
       clean();
+      init();
     }
 
     vm.getInfo = function(pUsuario) {
       wm.usuario._id = pUsuario._id;
       wm.usuario.name = pUsuario.name;
+      wm.usuario.pass = pUsuario.pass;
       wm.usuario.email = pUsuario.email;
       wm.usuario.rol = pUsuario.rol;
       wm.usuario.locate = pUsuario.locate;
@@ -37,6 +42,7 @@
         _id: wm.usuario._id,
         id: wm.usuario.id,
         name: wm.usuario.name,
+        pass: wm.usuario.pass,
         email: wm.usuario.email,
         rol: wm.usuario.rol,
         locate: wm.usuario.locate
@@ -45,6 +51,7 @@
         loadUsuarios();
         vm.id = null;
         vm.name = null;
+        vm.pass = null;
         vm.email = null;
         vm.rol = null;
         vm.locate = null;

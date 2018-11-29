@@ -18,14 +18,14 @@
 		.state('login',{
 			url: '/Login',
 			templateUrl: './components/login/login-page.html',
-			css: './css/assets/css/material-kit.css'
-			//resolve: {
-        //            load: ['$ocLazyLoad', function($ocLazyLoad) {
-          //              return $ocLazyLoad.load('./components/login/login.controller.js')
-            //        }]
-              //  },
-                //controller: 'userController',
-                //controllerAs: 'vm'
+			css: './css/assets/css/material-kit.css',
+			resolve: {
+                    load: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load('./components/login/login.controller.js')
+                    }]
+                },
+                controller: 'loginController',
+                controllerAs: 'vm'
 		})
 
 		.state('agenda',{
