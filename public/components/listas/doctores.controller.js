@@ -18,40 +18,46 @@
       })
     }
 
+    function init(){
+      vm.doctor = {};
+    }init();
 
 
     vm.save = function(pNewDoctor) {
       doctorService.setDoctor(pNewDoctor);
       console.log(pNewDoctor);
+      init();
       clean();
     }
 
     vm.getInfo = function(pDoctor) {
-      wm.doctor._id = pDoctor._id;
-      wm.doctor.name = pDoctor.name;
-      wm.doctor.special = pDoctor.special;
-      wm.doctor.time = pDoctor.time;
-      wm.doctor.locate = pDoctor.locate;
-      wm.doctor.avalible = pDoctor.avalible;
+      vm.doctor._id = pDoctor._id;
+      vm.doctor.name = pDoctor.name;
+      vm.doctor.special = pDoctor.special;
+      vm.doctor.time = pDoctor.time;
+      vm.doctor.locate = pDoctor.locate;
+      vm.doctor.avalible = pDoctor.avalible;
     }
 
     vm.update = function() {
       var doctorEdited = {
-      _id: wm.doctor._id,
-      avalible:  wm.doctor.avalible,
-      name:  wm.doctor.name,
-      special:  wm.doctor.special,
-      time:  wm.doctor.time,
-      locate:  wm.doctor.locate
+      _id: vm.doctor._id,
+      avalible:  vm.doctor.avalible,
+      name:  vm.doctor.name,
+      special:  vm.doctor.special,
+      time:  vm.doctor.time,
+      locate:  vm.doctor.locate
       }
       doctorService.updateDoctor(doctorEdited).then(function(response) {
         loadDoctores();
-        wm.avalible = null;
+        vm.avalible = null;
         vm.name = null;
         vm.special = null;
-        wm.time = null;
-        wm.locate = null;
-      })
+        vm.time = null;
+        vm.locate = null;
+      });
+
+      init();
     }
 
     function clean() {

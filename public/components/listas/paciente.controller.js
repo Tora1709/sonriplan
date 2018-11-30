@@ -11,6 +11,7 @@
     loadPacientes();
     vm.paciente = {};
     vm.pacientes = "";
+    vm.showFomrEdit = false;
 
     function loadPacientes() {
       pacienteService.getPacientes().then(function(response) {
@@ -18,30 +19,36 @@
       })
     }
 
+    function init(){
+      vm.paciente = {};
+    }init();
 
 
     vm.save = function(pNewPaciente) {
       pacienteService.setPaciente(pNewPaciente);
       clean();
+      init();
     }
 
     vm.getInfo = function(pPaciente) {
-      wm.paciente._id = pPaciente._id;
-      wm.paciente.name = pPaciente.name;
-      wm.paciente.email = pPaciente.email;
-      wm.paciente.id = pPaciente.id;
-      wm.paciente.phone = pPaciente.phone;
-      wm.paciente.age = pPaciente.age;
+      vm.paciente._id = pPaciente._id;
+      vm.paciente.name = pPaciente.name;
+      vm.paciente.email = pPaciente.email;
+      vm.paciente.id = pPaciente.id;
+      vm.paciente.phone = pPaciente.phone;
+      vm.paciente.age = pPaciente.age;
+      $("#Edit").modal();
+      vm.showFomrEdit = true;
     }
 
     vm.update = function() {
       var pacienteEdited = {
-        _id: wm.paciente._id,
-        id: wm.paciente.id,
-        name: wm.paciente.name,
-        email: wm.paciente.email,
-        phone: wm.paciente.phone,
-        age: wm.paciente.age
+        _id: vm.paciente._id,
+        id: vm.paciente.id,
+        name: vm.paciente.name,
+        email: vm.paciente.email,
+        phone: vm.paciente.phone,
+        age: vm.paciente.age
       }
       pacienteService.updatePaciente(pacienteEdited).then(function(response) {
         loadPacientes();
@@ -51,7 +58,10 @@
         vm.phone = null;
         vm.age = null;
 
-      })
+      });
+
+      vm.showFomrEdit = false;
+      init();
     }
 
     function clean() {

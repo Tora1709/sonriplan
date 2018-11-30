@@ -29,23 +29,23 @@
     }
 
     vm.getInfo = function(pUsuario) {
-      wm.usuario._id = pUsuario._id;
-      wm.usuario.name = pUsuario.name;
-      wm.usuario.pass = pUsuario.pass;
-      wm.usuario.email = pUsuario.email;
-      wm.usuario.rol = pUsuario.rol;
-      wm.usuario.locate = pUsuario.locate;
+      vm.usuario._id = pUsuario._id;
+      vm.usuario.name = pUsuario.name;
+      vm.usuario.pass = pUsuario.pass;
+      vm.usuario.email = pUsuario.email;
+      vm.usuario.rol = pUsuario.rol;
+      vm.usuario.locate = pUsuario.locate;
     }
 
     vm.update = function() {
       var pUserModified = {
-        _id: wm.usuario._id,
-        id: wm.usuario.id,
-        name: wm.usuario.name,
-        pass: wm.usuario.pass,
-        email: wm.usuario.email,
-        rol: wm.usuario.rol,
-        locate: wm.usuario.locate
+        _id: vm.usuario._id,
+        id: vm.usuario.id,
+        name: vm.usuario.name,
+        pass: vm.usuario.pass,
+        email: vm.usuario.email,
+        rol: vm.usuario.rol,
+        locate: vm.usuario.locate
       }
       usuarioService.updateUser(pUserModified).then(function(response) {
         loadUsuarios();
@@ -56,7 +56,8 @@
         vm.rol = null;
         vm.locate = null;
 
-      })
+      });
+      init();
     }
 
     function clean() {
