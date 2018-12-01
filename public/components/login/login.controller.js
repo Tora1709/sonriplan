@@ -12,23 +12,22 @@
       loadUsuarios();
 
 
-      /*SessionService.destroy();*/
+      SessionService.destroy();
 
       /*Valida que los datos sean correctos*/
       vm.login = function(credentials){
         var usersList = vm.usuarios;
-        var rol = '';
-        var login = 0;
-        login = AuthService.first(credentials, usersList)
+        var rol = 0;
+
         rol = AuthService.role(credentials, usersList);
           switch (rol) {
-            case 'Admin':
+            case 1:
               $location.path('/Home');
               break;
-            case 'Secretaria general':
+            case 2:
               $location.path('/Home');
               break;
-            case 'Secretaria CR':
+            case 3:
               $location.path('/Home');
               break;
             default:
