@@ -50,7 +50,6 @@ module.exports.setAgenda = function (req, res) {
     }, {
             $push: {
                 'agenda': {
-                    day: req.body.day,
                     citas: req.body.citas
                 }
             }

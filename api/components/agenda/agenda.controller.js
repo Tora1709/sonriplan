@@ -22,11 +22,13 @@ module.exports.save = function (req, res) {
     })
 }
 module.exports.findDoctorAgenda = function (req, res) {
-    Agenda.find({ 'doctor': req.body.doctor }).then(function (agendas) {
+    Agenda.find({ 'doctor': req.query._id }).then(function (agendas) {
         res.send(agendas)
     })
 }
 module.exports.findAgenda = function (req, res) {
+    // console.log(req)
+    // console.log('req')
     Agenda.find({ 'doctor': req.body.doctor, 'day': req.body.day }).then(function (agenda) {
         res.send(agenda)
     })
@@ -38,11 +40,7 @@ module.exports.addCitas = function (req, res) {
             $push: {
                 'citas': {
                     hora: req.body.hora,
-                    paciente1: req.body.paciente1,
-                    paciente2: req.body.paciente2,
-                    paciente3: req.body.paciente3,
-                    paciente4: req.body.paciente4,
-                    paciente5: req.body.paciente5,
+                    paciente: req.body.paciente
                 }
             }
         }
@@ -53,11 +51,7 @@ module.exports.updateCitas=function(req,res){
         _id:req.body._id,"citas._id":req.body._idCita
     },{
         "$set":{
-            'citas.$.paciente1':eq.body.paciente1,
-            'citas.$.paciente2':eq.body.paciente2,
-            'citas.$.paciente3':eq.body.paciente3,
-            'citas.$.paciente4':eq.body.paciente4,
-            'citas.$.paciente5':eq.body.paciente5,
+            'citas.$.paciente':req.body.paciente
         }
     })
 }

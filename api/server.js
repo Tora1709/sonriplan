@@ -42,8 +42,9 @@ app.use( function(req, res, next){
 var index = require('./index'),
 userRoutes = require('./components/users/user.route.js'),
 sucursalRoutes = require('./components/sucursal/sucursal.route.js'),
-pacienteRoutes = require('./components/paciente/paciente.route.js');
-doctorRoutes = require('./components/doctor/doctor.route.js');
+pacienteRoutes = require('./components/paciente/paciente.route.js'),
+doctorRoutes = require('./components/doctor/doctor.route.js'),
+agendaRoutes = require('./components/agenda/agenda.route.js');
 
 
 // Se definen las rutas de los servicios con las que se conecta el front-end
@@ -53,6 +54,7 @@ app.use('/api', userRoutes);
 app.use('/api', sucursalRoutes);
 app.use('/api', pacienteRoutes);
 app.use('/api', doctorRoutes);
+app.use('/api', agendaRoutes);
 
 app.use('/', index);
 
