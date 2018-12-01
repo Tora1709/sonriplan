@@ -55,14 +55,14 @@
 
     <div class="col-lg-3">
       <label>Doctor:</label>
-      <select type="text" class="form-control mb-1 " id="">
+      <select type="text" class="form-control mb-1 " id="" ng-model="vm.agenda.doctor">
         <option>--Seleccione un valor--</option>
         <option ng-repeat="doctor in vm.doctores" value={{doctor._id}}>{{doctor.name}}</option>
       </select>
     </div>
     <div class="col-lg-3">
         <label>Doctor:</label>
-        <input type="date" name="" id="">
+        <input type="date" name="" id="" ng-model="vm.agenda.day">
       </div>
   </div>
   <main class="row">
@@ -77,14 +77,19 @@
         <table class="col-md-12" id="agenda">
           <thead>
               <th>
-                <h4>Sabádo 7 Noviembre 2018</h4>
+                <h4>{{vm.agenda.day}}}</h4>
               </th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
               <th></th>
           </thead>
           <tbody>
-            <tr ng-repeat="agenda in vm.agenda.citas">
-              <td>{{agenda.hora}}</td>
-              <td>{{agenda.paciente}}</td>
+            <tr ng-repeat="cita in vm.citas">
+              <td>{{cita.hora}}</td>
+              <!-- <td>{{agenda.paciente}}</td> -->
+              <td ng-repeat="paciente in cita.pacientes track by $index">{{paciente}}</td>
             </tr>
           </tbody>
         </table>
