@@ -11,7 +11,6 @@
     loadPacientes();
     vm.paciente = {};
     vm.pacientes = "";
-    vm.showFomrEdit = false;
 
     function loadPacientes() {
       pacienteService.getPacientes().then(function(response) {
@@ -57,7 +56,6 @@
         vm.email = null;
         vm.phone = null;
         vm.age = null;
-
       });
 
       vm.showFomrEdit = false;
@@ -65,7 +63,7 @@
     }
 
     function clean() {
-      vm.paciente = {}
+      vm.pacientes = {}
     }
   }
 })();

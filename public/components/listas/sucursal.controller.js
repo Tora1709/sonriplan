@@ -34,6 +34,8 @@
       vm.sucursal._id = pSucursal._id;
       vm.sucursal.name = pSucursal.name;
       vm.sucursal.locate = pSucursal.locate;
+      $("#Edit").modal();
+      vm.showFomrEdit = true;
     }
 
     vm.update = function() {
@@ -46,8 +48,11 @@
         loadSucursales();
         vm.name = null;
         vm.locate = null;
+        vm.showFomrEdit = false;
       });
+      vm.showFomrEdit = false;
       init();
+      clean();
     }
 
     function clean() {

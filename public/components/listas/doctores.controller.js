@@ -37,6 +37,8 @@
       vm.doctor.time = pDoctor.time;
       vm.doctor.locate = pDoctor.locate;
       vm.doctor.avalible = pDoctor.avalible;
+      $("#Edit").modal();
+      vm.showFomrEdit = true;
     }
 
     vm.update = function() {
@@ -57,6 +59,7 @@
         vm.locate = null;
       });
 
+      vm.showFomrEdit = false;
       init();
     }
 

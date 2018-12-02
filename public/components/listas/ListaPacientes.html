@@ -240,7 +240,7 @@
 
                   </div>
                 </div>
-                <button type="submit" ng-click="vm.reset()" class="btn btn-default">Guardar</button>
+                <button type="submit" ng-click="vm.save(vm.paciente)" class="btn btn-default" data-dismiss="modal">Guardar</button>
 
               </form>
             </div>
@@ -248,6 +248,9 @@
 
             </div>
           </div>
+        </div>
+      </div>
+      </div>
 
           <div class="modal fade" tabindex="-1" id="Edit" role="dialog">
             <div class="modal-dialog">
@@ -299,7 +302,7 @@
 
                         </div>
                       </div>
-                      <button type="submit" ng-click="vm.update(paciente)" class="btn btn-default">Actualizar</button>
+                      <button type="submit" ng-click="vm.update(paciente)" class="btn btn-default" data-dismiss="modal">Actualizar</button>
 
                     </form>
                   </div>
@@ -307,6 +310,9 @@
 
                   </div>
                 </div>
+              </div>
+            </div>
+            </div>
 
 
   </main>

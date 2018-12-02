@@ -168,7 +168,7 @@ section{
           <td>{{$index+1}}</td>
           <td>{{sucursal.name}}</td>
           <td>{{sucursal.locate}}</td>
-          <td><a class="btn btn-primary" href="">Modificar</a></td>
+          <td><input class="btn btn-primary" type="button" value="Modificar" ng-click="vm.getInfo(sucursal)"></td>
           <td><a class="btn btn-danger" href="">Eliminar</a></td>
 
         </tr>
@@ -230,5 +230,56 @@ section{
 
           </div>
           </div>
+        </div>
+        </div>
+
+</div>
+
+
+<!-- Modal -->
+    <div class="modal fade" tabindex="-1" id="Edit" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form name="frmSucursal" ng-show="vm.showFomrEdit" novalidate autocomplete="off">
+                <div class="row">
+
+
+                  <div class=" col-xs-12  col-md-6">
+
+                    <label for="store-name">Nombre sucursal</label>
+                    <input id="name" type="text" class="form-control mb-1" ng-model="vm.sucursal.name" name="name" required/>
+
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+
+                    <label for="store-name">Ubicación</label>
+                    <input id="locate" type="text" class="form-control mb-1" ng-model="vm.sucursal.locate" name="locate" required/>
+
+                  </div>
+
+                  <button type="submit" ng-click="vm.update(sucursal)" class="btn btn-default" data-dismiss="modal">Actualizar</button>
+                </div>
+                <br>
+
+                <br>
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+
+          </div>
+          </div>
+        </div>
+        </div>
+
+</div>
 
 </div>
