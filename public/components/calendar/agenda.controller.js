@@ -17,6 +17,7 @@
     loadAgenda();
     console.log(vm.agenda);
     console.log('vm.agenda');
+    vm.loadAgenda=loadAgenda;
     // vm.agenda = {};
     function loadCitas(scope){
       var citas=[];
@@ -81,7 +82,9 @@
         if (response.data.length==0) {
          
          // console(pAgenda.citas[1]);
-          agendaService.setAgenda(pAgenda);
+         if (pAgenda.doctor!=""&&pAgenda.day!="") {
+           agendaService.setAgenda(pAgenda);
+         }
         } else {
           vm.agenda = response.data[0];
           loadCitas(vm);
