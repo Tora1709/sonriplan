@@ -35,6 +35,8 @@
       vm.usuario.email = pUsuario.email;
       vm.usuario.rol = pUsuario.rol;
       vm.usuario.locate = pUsuario.locate;
+      $("#Edit").modal();
+      vm.showFomrEdit = true;
     }
 
     vm.update = function() {
@@ -57,6 +59,7 @@
         vm.locate = null;
 
       });
+      vm.showFomrEdit = false;
       init();
     }
 

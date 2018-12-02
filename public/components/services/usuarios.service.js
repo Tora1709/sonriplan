@@ -27,7 +27,7 @@
       }
 
       function _updateUser(pUserModified) {
-        return $http.put('http://localhost:3000/api/update_sucursal',pUserModified);
+        return $http.put('http://localhost:3000/api/update_usuario',pUserModified);
       }
 
 

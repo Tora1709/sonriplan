@@ -154,7 +154,7 @@ section{
         <tr>
           <th>Nombre completo</th>
           <th>Correo electronico</th>
-          <th>Estado</th>
+          <th>Rol</th>
           <th>Acción</th>
 <th></th>
         </tr>
@@ -168,7 +168,7 @@ section{
           <td>{{usuario.name}}</td>
           <td>{{usuario.email}}</td>
           <td>{{usuario.rol}}</td>
-          <td><a class="btn btn-primary" href="" data-toggle="modal" data-target="">Modificar</a></td>
+          <td><input class="btn btn-primary" type="button" value="Modificar" ng-click="vm.getInfo(usuario)"></td>
           <td><a class="btn btn-danger" href="">Eliminar</a></td>
 
         </tr>
@@ -239,7 +239,80 @@ section{
             <button type="submit" ng-click="vm.save(vm.usuario)" class="btn btn-default" data-dismiss="modal">Guardar</button>
           </div>
           </div>
+        </div>
+        </div>
+        </div>
 
+
+
+
+        <!-- Edit -->
+            <div class="modal fade" id="Edit" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                      <form name="frmUsuario" ng-show="vm.showFomrEdit" novalidate autocomplete="off">
+                        <div class="row">
+
+
+                          <div class="col-xs-12  col-md-6">
+
+                            <label for="store-name">Nombre completo</label>
+                            <input id="name" name="name" type="text" class="form-control mb-1" ng-model="vm.usuario.name" required="required" />
+
+                          </div>
+                          <div class="col-xs-12  col-md-6">
+
+                            <label for="store-name">Contraseña</label>
+                            <input id="pass" name="pass" type="password" class="form-control mb-1" ng-model="vm.usuario.pass" required="required" />
+
+                          </div>
+                          <div class=" col-xs-12 col-md-6">
+
+                            <label for="store-name">Correo</label>
+                            <input id="email" type="email" name="email" ng-model="vm.usuario.email" class="form-control mb-1" required="required" />
+
+                          </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-12  col-md-6">
+                            <label>Rol</label>
+                           <select name="rol" id="rol" type="text" ng-model="vm.usuario.rol" class="form-control mb-1">
+                             <option>-Selecione un valor-</option>
+                             <option value="Secretaria general">Secretaria general</option>
+                             <option value="Secretaria CR">Secretaria CR</option>
+                             <option value="Admin">Admin</option>
+                           </select>
+
+                          </div>
+
+
+                          <div class=" col-xs-12  col-md-6">
+                            <label>Ubicación</label>
+                            <input name="locate" id="locate" type="text" ng-model="vm.usuario.locate" class="form-control mb-1" required="required" />
+                          </div>
+                        </div>
+                        <br>
+
+
+                      </form>
+                    </div>
+                    <button type="submit" ng-click="vm.update(vm.usuario)" class="btn btn-default" data-dismiss="modal">Actualizar</button>
+                    <div class="modal-footer">
+
+                  </div>
+                  </div>
+                </div>
+                </div>
+                </div>
   </main>
 
 
