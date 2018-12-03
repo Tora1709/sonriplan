@@ -26,12 +26,10 @@
         function _updateCita(pCitaModified) {
             return $http.put('http://localhost:3000/api/update_cita', pCitaModified);
         }
-        function _addCita(pAgenda) {
-            return $http.put('http://localhost:3000/api/add_cita', pAgenda);
+        function _addCita(pCita) {
+            return $http.put('http://localhost:3000/api/add_cita', pCita);
         }
         function _getAgenda(pAgenda) {
-            console.log(pAgenda);
-            console.log('pAgenda');
             return $http.post('http://localhost:3000/api/get_agenda',pAgenda);
         }
     }

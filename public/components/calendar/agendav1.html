@@ -76,7 +76,7 @@
         <thead>
           <tr>
             <th>
-              <h4>{{vm.agenda.day}}}</h4>
+              <h4>{{vm.agenda.day | date:"dd-MM-yyyy"}}</h4>
             </th>
             <th> <label class="tbl-header">Especialidad</label>
               <select type="date" class="form-control mb-1 " id="" ng-model="vm.doctor.special">
@@ -84,14 +84,13 @@
                 <option ng-repeat="doctor in vm.special" value="{{doctor.special}}">{{doctor.special}}</option>
                 <option></option>
               </select></th>
-            <th><label>Doctor:</label>
-              <select type="date" class="form-control mb-1 " id="" ng-model="vm.agenda.doctor">
+            <th><label>Doctor {{vm.agenda.doctor}}:</label>
+              <select type="date" class="form-control mb-1" id="" ng-model="vm.agenda.doctor">
                 <option>--Seleccione un valor--</option>
                 <option ng-repeat="doctor in vm.doctores" value={{doctor._id}}>{{doctor.name}}</option>
-                <option value=""></option>
               </select></th>
             <th><label class="tbl-header">Doctor:</label>
-              <input type="date" name="" id="" ng-model="vm.agenda.day" class="form-control"></th>
+              <input type="date" name="" id="" datepicker-popup="dd/MM/yyyy" ng-model="vm.agenda.day" class="form-control mb-1"></th>
             <th></th>
             <th><a class="btn" ng-click="vm.loadAgenda()">Mostrar agenda</a></th>
           </tr>
@@ -100,7 +99,9 @@
           <tr ng-repeat="cita in vm.citas">
             <td>{{cita.hora}}</td>
             <!-- <td>{{agenda.paciente}}</td> -->
-            <td ng-repeat="paciente in cita.pacientes track by $index">{{paciente}}</td>
+            <td ng-repeat="paciente in cita.pacientes track by $index" ng-hide="paciente==''">
+              {{paciente}}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -127,19 +128,27 @@
         <div class="modal-body">
           <div class="">
             <div class="col-lg-12">
-              <label for="date" class="">Asunto:</label>
-              <input type="text" class="form-control mb-1 " id="">
+              <label for="hora" class="">Hora:</label>
+              <select name="" id="hora" class="form-control mb-1 " ng-model="vm.cita.hora">
+                <option value="">--Selccione una opcion--</option>
+                <option ng-repeat="cita in vm.citas" value="{{cita.hora}}">{{cita.hora}}</option>
+              </select>
             </div>
             <div class="col-lg-12">
-              <select class="" name="">
+              <label for="paciente" class="">Paciente:</label>
+              <select id="paciente"class="form-control mb-1" name="" ng-model="vm.cita.paciente">
                 <option>--Seleccione un valor--</option>
                 <option ng-repeat="paciente in vm.pacientes" value={{paciente.name}}>{{paciente.name}}</option>
               </select>
             </div>
+            <div class="col-lg12">
+              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.addCita()">Añadir</button>
+              <label for="paciente" class="">{{vm.cita.hora}} aqui:</label>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
         </div>
       </div>
 

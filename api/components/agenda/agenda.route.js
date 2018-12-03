@@ -24,14 +24,14 @@ router.route('/get_agenda')
         agendaController.findAgenda(req, res);
     });
 
-router.route('/update_citas')
+router.route('/update_cita')
     .put(function (req, res) {
         agendaController.updateCitas(req, res);
     });
     
-router.route('/add_citass')
+router.route('/add_cita')
     .put(function (req, res) {
-        agendaController.updateCitas(req, res);
+        agendaController.addCitas(req, res);
     });
 
 module.exports = router;

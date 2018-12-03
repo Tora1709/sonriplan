@@ -34,6 +34,7 @@ module.exports.findAgenda = function (req, res) {
     })
 }
 module.exports.addCitas = function (req, res) {
+    console.log(req.body)
     Agenda.update({
         _id: req.body._id
     }, {
@@ -43,6 +44,14 @@ module.exports.addCitas = function (req, res) {
                     paciente: req.body.paciente
                 }
             }
+        },
+        function (error) {
+            res.json(
+                {
+                    success: true,
+                    msg: "Nueva cita disponible"
+                }
+            )
         }
     )
 }
