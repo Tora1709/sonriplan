@@ -220,7 +220,14 @@
                   <div class="col-xs-12  col-md-6">
                     <label>Especialidad</label>
                     <select name="special" ng-model="vm.doctor.special" class="form-control mb-1">
-                      <option>-Selecione-</option>
+                      <option>-Selecione una opción-</option>
+                      <option value="Odontologia General">Odontologia General</option>
+                      <option value="Ortodoncia">Ortodoncia</option>
+                      <option value="Periodoncia">Periodoncia</option>
+                      <option value="Prootondoncia">Prootondoncia</option>
+                      <option value="Maxilofacial">Maxilofacial</option>
+                      <option value="Cirugía">Cirugía</option>
+                      <option value="Endodoncia">Endodoncia</option>
                     </select>
                   </div>
                 </div>
@@ -277,7 +284,14 @@
                   <div class="col-xs-12  col-md-6">
                     <label>Especialidad</label>
                     <select name="special" ng-model="vm.doctor.special" class="form-control mb-1">
-                      <option>-Selecione-</option>
+                      <option>-Selecione una opción-</option>
+                      <option value="Odontologia General">Odontologia General</option>
+                      <option value="Ortodoncia">Ortodoncia</option>
+                      <option value="Periodoncia">Periodoncia</option>
+                      <option value="Prootondoncia">Prootondoncia</option>
+                      <option value="Maxilofacial">Maxilofacial</option>
+                      <option value="Cirugía">Cirugía</option>
+                      <option value="Endodoncia">Endodoncia</option>
                     </select>
                   </div>
                 </div>
@@ -304,6 +318,63 @@
                         </span>
                       </label>
                     </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" ng-click="vm.update(vm.doctor)" class="btn btn-default" data-dismiss="modal">Actualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Borrar -->
+    <div class="modal fade" id="Edit" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form name="frmDoctores" ng-show="vm.showFomrEdit" novalidate autocomplete="off">
+                <div class="row">
+                  <div class="col-xs-12  col-md-6">
+                    <label for="">Nombre completo</label>
+                    <input name="name" ng-model="vm.doctor.name" type="text" class="form-control mb-1" name="store-name" required="required" />
+                  </div>
+                  <div class="col-xs-12  col-md-6">
+                    <label>Especialidad</label>
+                    <select name="special" ng-model="vm.doctor.special" class="form-control mb-1">
+                      <option>-Selecione una opción-</option>
+                      <option value="Odontologia General">Odontologia General</option>
+                      <option value="Ortodoncia">Ortodoncia</option>
+                      <option value="Periodoncia">Periodoncia</option>
+                      <option value="Prootondoncia">Prootondoncia</option>
+                      <option value="Maxilofacial">Maxilofacial</option>
+                      <option value="Cirugía">Cirugía</option>
+                      <option value="Endodoncia">Endodoncia</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class=" col-xs-12 col-md-6">
+                    <label for="store-name">Horario</label>
+                    <input name="time" ng-model="vm.doctor.time" type="text" class="form-control mb-1" name="store-name" required="required" />
+                  </div>
+                  <div class=" col-xs-12  col-md-6">
+                    <label>Ubicación</label>
+                    <input name="locate" ng-model="vm.doctor.locate" type="text" class="form-control mb-1" name="store-name" required="required" />
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-xs-12  col-md-6">
+                  
                   </div>
                 </div>
               </form>

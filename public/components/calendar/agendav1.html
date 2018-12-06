@@ -80,9 +80,14 @@
             </th>
             <th> <label class="tbl-header">Especialidad</label>
               <select type="date" class="form-control mb-1 " id="" ng-model="vm.doctor.special">
-                <option>--Seleccione un valor--</option>
-                <option ng-repeat="doctor in vm.special" value="{{doctor.special}}">{{doctor.special}}</option>
-                <option></option>
+                <option>-Selecione una opción-</option>
+                <option value="Odontologia General">Odontologia General</option>
+                <option value="Ortodoncia">Ortodoncia</option>
+                <option value="Periodoncia">Periodoncia</option>
+                <option value="Prootondoncia">Prootondoncia</option>
+                <option value="Maxilofacial">Maxilofacial</option>
+                <option value="Cirugía">Cirugía</option>
+                <option value="Endodoncia">Endodoncia</option>  
               </select></th>
             <th><label>Doctor {{vm.agenda.doctor}}:</label>
               <select type="date" class="form-control mb-1" id="" ng-model="vm.agenda.doctor">
