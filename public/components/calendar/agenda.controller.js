@@ -31,6 +31,8 @@
         if (newCita.hora!=undefined&&newCita.hora!=""&&newCita.paciente!=undefined&&newCita.paciente!="") {
           agendaService.addCita(newCita).then(function (response) {
             loadAgenda();
+            vm.cita.paciente="";
+            vm.cita.hora="";
           })
         }
 

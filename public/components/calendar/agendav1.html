@@ -87,13 +87,17 @@
                 <option value="Prootondoncia">Prootondoncia</option>
                 <option value="Maxilofacial">Maxilofacial</option>
                 <option value="Cirugía">Cirugía</option>
-                <option value="Endodoncia">Endodoncia</option>  
+                <option value="Endodoncia">Endodoncia</option>
               </select></th>
             <th><label>Doctor {{vm.agenda.doctor}}:</label>
-              <select type="date" class="form-control mb-1" id="" ng-model="vm.agenda.doctor">
+              <!-- <select type="date" class="form-control mb-1" id="" ng-model="vm.agenda.doctor"> -->
+              <input type="text" class="form-control mb-1" list="doctor" id="" ng-model="vm.agenda.doctor">
+              <datalist id="doctor">
                 <option>--Seleccione un valor--</option>
-                <option ng-repeat="doctor in vm.doctores" value={{doctor._id}}>{{doctor.name}}</option>
-              </select></th>
+                <option ng-repeat="doctor in vm.doctores|filter:vm.doctor.special" value={{doctor._id}}>{{doctor.name}}</option>
+              </datalist>
+              <!-- </select> -->
+            </th>
             <th><label class="tbl-header">Doctor:</label>
               <input type="date" name="" id="" datepicker-popup="dd/MM/yyyy" ng-model="vm.agenda.day" class="form-control mb-1"></th>
             <th></th>
@@ -132,28 +136,35 @@
         </div>
         <div class="modal-body">
           <div class="">
-            <div class="col-lg-12">
-              <label for="hora" class="">Hora:</label>
-              <select name="" id="hora" class="form-control mb-1 " ng-model="vm.cita.hora">
-                <option value="">--Selccione una opcion--</option>
-                <option ng-repeat="cita in vm.citas" value="{{cita.hora}}">{{cita.hora}}</option>
-              </select>
-            </div>
-            <div class="col-lg-12">
-              <label for="paciente" class="">Paciente:</label>
-              <select id="paciente"class="form-control mb-1" name="" ng-model="vm.cita.paciente">
-                <option>--Seleccione un valor--</option>
-                <option ng-repeat="paciente in vm.pacientes" value={{paciente.name}}>{{paciente.name}}</option>
-              </select>
-            </div>
-            <div class="col-lg12">
-              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.addCita()">Añadir</button>
-              <label for="paciente" class="">{{vm.cita.hora}} aqui:</label>
-            </div>
+            <form id="fAgenda">
+              <div class="col-lg-12">
+                <label for="hora" class="">Hora:</label>
+                <!-- <select name="" id="hora" class="form-control mb-1 " ng-model="vm.cita.hora"> -->
+                <input type="text" id="hora" class="form-control mb-1" list="time" ng-model="vm.cita.hora">
+                <datalist ng-model="vm.cita.hora" id="time">
+                  <option ng-repeat="cita in vm.citas" value="{{cita.hora}}" ng-if='cita.pacientes[5] == " "'>{{cita.hora}}</option>
+                </datalist>
+                <!-- </select> -->
+              </div>
+              <div class="col-lg-12">
+                <label for="paciente" class="">Paciente:</label>
+                <!-- <select id="paciente" class="form-control mb-1" name="" ng-model="vm.cita.paciente"> -->
+                <input type="text" id="hora" class="form-control mb-1" list="paci" ng-model="vm.cita.hora">
+                <datalist id="paci">
+                  <option>--Seleccione un valor--</option>
+                  <option ng-repeat="paciente in vm.pacientes" value={{paciente.name}}>{{paciente.name}}</option>
+                </datalist>
+                <!-- </select> -->
+              </div>
+              <div class="col-lg12">
+                <button type="reset" value="reset" class="btn btn-default" data-dismiss="modal" ng-click="vm.addCita()">Añadir</button>
+                <label for="paciente" class="">{{vm.cita.hora}} aqui:</label>
+              </div>
+            </form>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
 
