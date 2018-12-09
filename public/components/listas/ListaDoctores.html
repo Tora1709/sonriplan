@@ -195,7 +195,7 @@
               <td>{{doctor.avalible}}</td>
               <!-- <td><a class="btn btn-primary" href="">Modificar</a></td> -->
               <td><input class="btn btn-primary" type="button" value="Modificar" ng-click="vm.getInfo(doctor)"></td>
-              <td><a class="btn btn-danger" href="">Eliminar</a></td>
+              <td><input class="btn btn-danger" type="button" value="Eliminar" ng-click="vm.getInfo2(doctor)"></td>
             </tr>
           </tbody>
         </table>
@@ -331,7 +331,7 @@
     </div>
 
     <!-- Modal Borrar -->
-    <div class="modal fade" id="Edit" role="dialog">
+    <div class="modal fade" id="Erase" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -374,14 +374,23 @@
                 <br>
                 <div class="row">
                   <div class="col-xs-12  col-md-6">
-                  
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input name="avalible" ng-model="vm.doctor.avalible" class="form-check-input" type="checkbox" value="">
+                        Disponibilidad
+                        <span class="form-check-sign">
+            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </form>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" ng-click="vm.update(vm.doctor)" class="btn btn-default" data-dismiss="modal">Actualizar</button>
+            <button type="submit" ng-click="vm.delete(vm.doctor)" class="btn btn-danger" data-dismiss="modal">Si</button>
+            <button type="submit" ng-click="" class="btn btn-default" data-dismiss="modal">No</button>
           </div>
         </div>
       </div>

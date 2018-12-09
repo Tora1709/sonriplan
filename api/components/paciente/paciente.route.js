@@ -24,4 +24,9 @@ router.route('/update_paciente')
     pacienteController.update(req, res);
   });
 
+  router.route('/delete_paciente')
+    .delete(function(req, res) {
+      pacienteController.delete(req, res);
+    });
+
 module.exports = router;

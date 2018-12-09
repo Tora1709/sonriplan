@@ -180,7 +180,7 @@
               <td>{{paciente.id}}</td>
               <td>{{paciente.phone}}</td>
               <td><input class="btn btn-primary" type="button" value="Modificar" ng-click="vm.getInfo(paciente)"></td>
-              <td><a class="btn btn-danger" href="">Eliminar</a></td>
+              <td><input class="btn btn-danger" type="button" value="Eliminar" ng-click="vm.getInfo2(paciente)"></td>
 
             </tr>
 
@@ -314,6 +314,68 @@
             </div>
             </div>
 
+
+            <div class="modal fade" tabindex="-1" id="Erase" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                      <form name="frmPaciente" ng-show="vm.showFomrEdit" novalidate autocomplete="off">
+                        <div class="row">
+
+
+                          <div class="col-xs-12  col-md-6">
+
+                            <label for="store-name">Nombre completo</label>
+                            <input ng-model="vm.paciente.name" name="name" type="text" class="form-control mb-1" required="required" />
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+
+                            <label for="store-name">Correo</label>
+                            <input ng-model="vm.paciente.email" name="email" type="email" class="form-control mb-1" required="required" />
+
+                          </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-12  col-md-6">
+                            <label>Cédula</label>
+                            <input ng-model="vm.paciente.id" name="id" type="text" class="form-control mb-1" required="required" />
+
+                          </div>
+
+
+                          <div class=" col-xs-12  col-md-6">
+                            <label>Teléfono</label>
+                            <input ng-model="vm.paciente.phone" name="phone" type="text" class="form-control mb-1" required="required" />
+                          </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-xs-12  col-md-6">
+                            <label>Edad</label>
+                            <input ng-model="vm.paciente.age" name="age" type="text" class="form-control mb-1" required="required" />
+
+                          </div>
+                        </div>
+                        <button type="submit" ng-click="vm.delete(paciente)" class="btn btn-danger" data-dismiss="modal">Si</button>
+                        <button type="submit" ng-click="" class="btn btn-default" data-dismiss="modal">No</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
 
   </main>
 

@@ -44,3 +44,15 @@ module.exports.update = function(req, res) {
         });
     });
 }
+
+module.exports.delete = function(req, res) {
+    console.log(req.body.id);
+    Paciente.findOneAndRemove(req.body._id, {
+        $delete: req.body
+    }).then(function(data) {
+        res.json({
+            success: true,
+            msg: 'Se ha eliminado correctamente.'
+        });
+    });
+}

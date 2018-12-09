@@ -14,7 +14,8 @@
       var publicAPI = {
         setPaciente: _setPaciente,
         getPacientes: _getPacientes,
-        updatePaciente: _updatePaciente
+        updatePaciente: _updatePaciente,
+        deletePaciente: _deletePaciente
       };
       return publicAPI;
 
@@ -28,6 +29,10 @@
 
       function _updatePaciente(pPacienteModified) {
         return $http.put('http://localhost:3000/api/update_paciente',pPacienteModified);
+      }
+
+      function _deletePaciente(pPacienteModified) {
+        return $http.delete('http://localhost:3000/api/delete_paciente',pPacienteModified);
       }
 
 

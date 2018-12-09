@@ -44,6 +44,18 @@ module.exports.update = function (req, res) {
         });
     });
 }
+
+module.exports.delete = function (req, res) {
+    console.log(req.body.id);
+    Doctor.findOneAndRemove(req.body._id, {
+        $delete: req.body
+    }).then(function (data) {
+        res.json({
+            success: true,
+            msg: 'Se ha eliminado correctamente.'
+        });
+    });
+}
 module.exports.setAgenda = function (req, res) {
     Doctor.update({
         _id: req.body._id

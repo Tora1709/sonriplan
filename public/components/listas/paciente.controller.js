@@ -62,6 +62,39 @@
       init();
     }
 
+    vm.getInfo2 = function(pPaciente) {
+      vm.paciente._id = pPaciente._id;
+      vm.paciente.name = pPaciente.name;
+      vm.paciente.email = pPaciente.email;
+      vm.paciente.id = pPaciente.id;
+      vm.paciente.phone = pPaciente.phone;
+      vm.paciente.age = pPaciente.age;
+      $("#Erase").modal();
+      vm.showFomrEdit = true;
+    }
+
+    vm.delete = function() {
+      var pacienteEdited = {
+        _id: vm.paciente._id,
+        id: vm.paciente.id,
+        name: vm.paciente.name,
+        email: vm.paciente.email,
+        phone: vm.paciente.phone,
+        age: vm.paciente.age
+      }
+      pacienteService.deletePaciente(pacienteEdited).then(function(response) {
+        loadPacientes();
+        vm.id = null;
+        vm.name = null;
+        vm.email = null;
+        vm.phone = null;
+        vm.age = null;
+      });
+
+      vm.showFomrEdit = false;
+      init();
+    }
+
     function clean() {
       vm.pacientes = {}
     }
