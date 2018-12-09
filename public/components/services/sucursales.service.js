@@ -14,7 +14,8 @@
       var publicAPI = {
         setSucursal: _setSucursal,
         getSucursales: _getSucursales,
-        updateSucursal: _updateSucursal
+        updateSucursal: _updateSucursal,
+        deleteSucursal: _deleteSucursal
       };
       return publicAPI;
 
@@ -29,6 +30,10 @@
 
       function _updateSucursal(pSucursalModified) {
         return $http.put('http://localhost:3000/api/update_sucursal',pSucursalModified);
+      }
+
+      function _deleteSucursal(pSucursalModified) {
+        return $http.delete('http://localhost:3000/api/delete_sucursal',pSucursalModified);
       }
 
 

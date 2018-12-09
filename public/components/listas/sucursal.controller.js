@@ -55,6 +55,31 @@
       clean();
     }
 
+    vm.getInfo2 = function(pSucursal) {
+      vm.sucursal._id = pSucursal._id;
+      vm.sucursal.name = pSucursal.name;
+      vm.sucursal.locate = pSucursal.locate;
+      $("#Erase").modal();
+      vm.showFomrEdit = true;
+    }
+
+    vm.delete = function() {
+      var sucursalEdited = {
+        _id: vm.sucursal._id,
+        name: vm.sucursal.name,
+        locate: vm.sucursal.locate
+      }
+      sucursalService.deleteSucursal(sucursalEdited).then(function(response) {
+        loadSucursales();
+        vm.name = null;
+        vm.locate = null;
+        vm.showFomrEdit = false;
+      });
+      vm.showFomrEdit = false;
+      init();
+      clean();
+    }
+
     function clean() {
       vm.sucursal = {}
     }

@@ -24,4 +24,8 @@ router.route('/update_sucursal')
     sucursalController.update(req, res);
   });
 
+  router.route('/delete_sucursal')
+    .delete(function(req, res) {
+      sucursalController.delete(req, res);
+    });
 module.exports = router;
