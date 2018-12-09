@@ -14,7 +14,8 @@
       var publicAPI = {
         setUser: _setUser,
         getUsers: _getUsers,
-        updateUser: _updateUser
+        updateUser: _updateUser,
+        deleteUser: _deleteUser
       };
       return publicAPI;
 
@@ -28,6 +29,10 @@
 
       function _updateUser(pUserModified) {
         return $http.put('http://localhost:3000/api/update_usuario',pUserModified);
+      }
+
+      function _deleteUser(pUserModified) {
+        return $http.delete('http://localhost:3000/api/delete_usuario',pUserModified);
       }
 
 
