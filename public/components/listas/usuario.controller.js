@@ -26,6 +26,7 @@
       usuarioService.setUser(pNewUsuario);
       clean();
       init();
+      window.location.reload();
     }
 
     vm.getInfo = function(pUsuario) {

@@ -9,6 +9,7 @@
 
 
       var vm = this;
+
       loadUsuarios();
 
 
@@ -31,6 +32,7 @@
               $location.path('/Home');
               break;
             default:
+            $("#Error").modal();
               break;
           }
       }

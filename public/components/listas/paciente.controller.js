@@ -27,6 +27,7 @@
       pacienteService.setPaciente(pNewPaciente);
       clean();
       init();
+      window.location.reload();
     }
 
     vm.getInfo = function(pPaciente) {

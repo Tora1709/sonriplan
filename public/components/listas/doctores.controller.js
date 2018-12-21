@@ -28,6 +28,7 @@
       console.log(pNewDoctor);
       init();
       clean();
+      window.location.reload();
     }
 
     vm.getInfo = function(pDoctor) {

@@ -11,6 +11,7 @@
     loadSucursales();
     vm.sucursal = {};
     vm.sucursales = "";
+    vm.showFomrSave = true;
 
     function loadSucursales() {
       sucursalService.getSucursales().then(function(response) {
@@ -23,12 +24,22 @@
     }init();
 
 
+    vm.save2 = function() {
+      $("#myModal").modal();
+    }
     vm.save = function(pNewSucursal) {
       sucursalService.setSucursal(pNewSucursal);
       console.log(pNewSucursal);
+
+
+
       init();
       clean();
+      window.location.reload();
+
     }
+
+
 
     vm.getInfo = function(pSucursal) {
       vm.sucursal._id = pSucursal._id;
